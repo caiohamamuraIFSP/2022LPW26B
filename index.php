@@ -1,7 +1,7 @@
 <?php
 $conexao = new PDO("sqlite:banco.db");
 
-$cursor = $conexao->query("SELECT * FROM anime ORDER BY nome DESC");
+$cursor = $conexao->query("SELECT * FROM anime");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,11 +15,14 @@ $cursor = $conexao->query("SELECT * FROM anime ORDER BY nome DESC");
 
 <body>
     <?php foreach ($cursor as $linha) { ?>
-        <p>
-            <a href="detalhes.php?id=<?= $linha['id'] ?>">
-                <?= $linha["nome"] ?>
+        <div style="display:flex;align-items:center;margin-left:calc(50vw - 100px)">
+            <a href="detalhes.php?id=<?= $linha['id'] ?>" style="    display: flex;
+    align-items: center;
+    flex-flow: row-reverse;">
+                <div style="margin:5px"><?= $linha["nome"] ?></div>
+                <img style="height:50px;margin:5px" src="<?= $linha["img"] ?>">
             </a>
-        </p>
+    </div>
     <?php } ?>
 </body>
 
