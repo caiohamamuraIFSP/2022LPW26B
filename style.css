@@ -1,0 +1,5 @@
+.imagem {
+    display: flex;
+    justify-content: center;
+    height: 30vh;
+}

@@ -1,0 +1,1 @@
+.import animes.csv anime --csv
